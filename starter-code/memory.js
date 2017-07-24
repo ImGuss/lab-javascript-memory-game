@@ -81,12 +81,12 @@ $(document).ready(function(){
       pairArray.push(e.currentTarget);
       console.log(imgArray);
       console.log(pairArray);
-      pairsTried += 1;
+      pairsTried ++;
       $('#pairs-tried').html("Pairs tried: " + pairsTried);
 
       // if pair is found
       if (imgArray[0] === imgArray[1]) {
-        pairsFound += 1;
+        pairsFound ++;
         $('#pairs-found').html("Pairs found: " + pairsFound);
         imgArray = [];
         pairArray = [];
