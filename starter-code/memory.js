@@ -35,10 +35,15 @@ MemoryGame.prototype._shuffleCard = function() {
   var counter = this.Cards.length;
 
   while (counter > 0) {
+    // set index to a random number from 1 to counter
     var index = Math.floor(Math.random() * counter);
+    // lower counter by 1
     counter--;
+    // set temp to a card at index 'counter'
     var temp = this.Cards[counter];
+    // set card at index 'counter' to be card at index 'index'
     this.Cards[counter] = this.Cards[index];
+    // set card at index 'index' to the temp card we saved earlier
     this.Cards[index] = temp;
   }
   return;
@@ -92,7 +97,10 @@ $(document).ready(function(){
         pairArray = [];
 
         if (pairsFound === pairAmount) {
-          alert("YOU WON! It took you " + pairsTried + " tries.");
+          // wait for card to show and then give the winning message
+          setTimeout( function() {
+            alert("YOU WON! It took you " + pairsTried + " tries.");
+          }, 500);
         } // this 'if' statment is by itself, the else below if part of the above 'if' statement
 
         // if pair is not found
